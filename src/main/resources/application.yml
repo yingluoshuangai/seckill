@@ -1,3 +1,7 @@
+server:
+  port: 6061
+  servlet:
+    context-path: /seckill
 spring:
   # thymeleaf 配置
   thymeleaf:
