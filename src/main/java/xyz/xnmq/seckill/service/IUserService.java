@@ -2,7 +2,7 @@ package xyz.xnmq.seckill.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import xyz.xnmq.seckill.entity.User;
-import xyz.xnmq.seckill.vo.LoginVo;
+import xyz.xnmq.seckill.dto.LoginDto;
 import xyz.xnmq.seckill.vo.RespBean;
 
 /**
@@ -20,6 +20,6 @@ public interface IUserService extends IService<User> {
       * @param vo
       * @return
       */
-    RespBean doLogin(LoginVo vo);
+    RespBean doLogin(LoginDto vo);
 
 }

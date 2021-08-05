@@ -3,14 +3,12 @@ package xyz.xnmq.seckill.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.thymeleaf.util.StringUtils;
 import xyz.xnmq.seckill.entity.User;
 import xyz.xnmq.seckill.exception.GlobalException;
 import xyz.xnmq.seckill.mapper.UserMapper;
 import xyz.xnmq.seckill.service.IUserService;
 import xyz.xnmq.seckill.utils.MD5Util;
-import xyz.xnmq.seckill.utils.ValidatorUtil;
-import xyz.xnmq.seckill.vo.LoginVo;
+import xyz.xnmq.seckill.dto.LoginDto;
 import xyz.xnmq.seckill.vo.RespBean;
 import xyz.xnmq.seckill.vo.RespBeanEnum;
 
@@ -30,7 +28,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     private UserMapper userMapper;
 
     @Override
-    public RespBean doLogin(LoginVo vo) {
+    public RespBean doLogin(LoginDto vo) {
         String mobile = vo.getMobile();
         String password = vo.getPassword();
 //        if(StringUtils.isEmpty(mobile) || StringUtils.isEmpty(password)){

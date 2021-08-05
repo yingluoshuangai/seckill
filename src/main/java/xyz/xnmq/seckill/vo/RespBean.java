@@ -1,5 +1,7 @@
 package xyz.xnmq.seckill.vo;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,9 +14,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@ApiModel(description = "响应数据")
 public class RespBean {
+    @ApiModelProperty(value = "状态码")
     private long code;
+    @ApiModelProperty(value = "消息")
     private String message;
+    @ApiModelProperty(value = "数据")
     private Object obj;
 
     /**

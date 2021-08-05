@@ -1,21 +1,14 @@
 package xyz.xnmq.seckill.controller;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import xyz.xnmq.seckill.service.IUserService;
-import xyz.xnmq.seckill.vo.LoginVo;
+import xyz.xnmq.seckill.dto.LoginDto;
 import xyz.xnmq.seckill.vo.RespBean;
-
-import javax.validation.Valid;
 
 /**
  * @author zhoulong
@@ -31,25 +24,35 @@ public class LoginController {
     IUserService userService;
 
     /**
-     * 进入登录界面
+     * 页面 ： 进入登录页面
+     *
      * @return
      */
-    @RequestMapping("toLogin")
-    public String toLogin(){
+    @ApiOperation(value = "页面-获得登录页面", notes = "页面-获得登录页面", position = 1)
+    @RequestMapping(value = "toLogin", method = RequestMethod.GET)
+    public String toLogin() {
         return "login";
     }
 
     /**
      * 登录功能
-     * @param vo
+     *
+     * @param dto
      * @return
      */
-    @RequestMapping("doLogin")
+    @ApiOperation(value = "登录功能", notes = "根据手机号和密码登录", position = 2)
+    @RequestMapping(value = "doLogin", method = RequestMethod.POST)
     @ResponseBody
-    @ApiOperation(value = "登录功能")
-    @ApiImplicitParam(name = "name",value = "姓名",required = true)
-    public RespBean doLogin(@Validated LoginVo vo){
-        log.info("Login:{}", vo);
-        return userService.doLogin(vo);
+//    @ApiImplicitParams({
+//            @ApiImplicitParam(name = "mobile", value = "手机号", required = true, paramType = "body"),
+//            @ApiImplicitParam(name = "password", value = "密码", required = true, paramType = "body")
+//    })
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "请求成功"),
+            @ApiResponse(code = 500, message = "服务端异常")
+    })
+    public RespBean doLogin(@Validated LoginDto dto) {
+        log.info("Login:{}", dto);
+        return userService.doLogin(dto);
     }
 }
