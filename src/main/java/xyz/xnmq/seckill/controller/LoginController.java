@@ -11,7 +11,7 @@ import xyz.xnmq.seckill.dto.LoginDto;
 import xyz.xnmq.seckill.vo.RespBean;
 
 /**
- * @author zhoulong
+ * @author xnmq
  * @Date 2021/7/13
  * @Description
  */

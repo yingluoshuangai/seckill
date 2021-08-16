@@ -7,7 +7,7 @@ import xyz.xnmq.seckill.vo.RespBean;
 import xyz.xnmq.seckill.vo.RespBeanEnum;
 
 /**
- * @author zhoulong
+ * @author xnmq
  * @Date 2021/7/20
  * @Description
  * 全局通用异常

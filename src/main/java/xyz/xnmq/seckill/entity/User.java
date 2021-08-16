@@ -23,9 +23,14 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 用户ID/手机号
+     * 用户ID
      */
     private Long id;
+
+    /**
+     * 手机号码
+     */
+    private Long mobile;
 
     /**
      * 昵称

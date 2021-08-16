@@ -3,7 +3,7 @@ package xyz.xnmq.seckill.utils;
 import org.apache.commons.codec.digest.DigestUtils;
 
 /**
- * @author zhoulong
+ * @author xnmq
  * @Date 2021/7/12
  * @Description
  * MD5 加密工具类
@@ -34,8 +34,9 @@ public class MD5Util {
      * @return
      */
     public static String inputPassToFromPass(String inputPass){
+        // 注意char相加，会转成int类型相加，所以需要在前面加个空字符串
         // 对 密码 加salt
-        String src = salt.charAt(0) + salt.charAt(2) + inputPass + salt.charAt(4) + salt.charAt(5);
+        String src = "" + salt.charAt(0) + salt.charAt(2) + inputPass + salt.charAt(5) + salt.charAt(4);
         return md5(src);
     }
 

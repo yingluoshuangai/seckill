@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @author zhoulong
+ * @author xnmq
  * @Date 2021/7/13
  * @Description 通用响应
  */

@@ -3,7 +3,8 @@
 -- 用户表 t_user
 CREATE TABLE t_user
 (
-    id              bigint(20)   not null comment '用户ID/手机号',
+    id              bigint(20)   not null comment '用户ID',
+    mobile          bigint(20)   not null comment '手机号',
     nickname        varchar(255) not null comment '昵称',
     password        varchar(32)  default null COMMENT '密码，MD5(MD5(pass明文 + 固定salt) + 固定salt)',
     slat            varchar(10)  DEFAULT null comment '密码加密需要的slat',

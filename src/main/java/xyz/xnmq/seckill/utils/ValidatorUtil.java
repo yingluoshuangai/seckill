@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author zhoulong
+ * @author xnmq
  * @Date 2021/7/16
  * @Description
  * 有效性校验

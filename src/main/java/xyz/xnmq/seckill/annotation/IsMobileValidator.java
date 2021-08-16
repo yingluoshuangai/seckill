@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author zhoulong
+ * @author xnmq
  * @Date 2021/7/20
  * @Description
  * validator 中 解析 注解 @IsMobile

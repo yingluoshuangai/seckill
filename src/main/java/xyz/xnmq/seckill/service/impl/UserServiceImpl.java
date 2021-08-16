@@ -1,5 +1,6 @@
 package xyz.xnmq.seckill.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,15 +32,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     public RespBean doLogin(LoginDto vo) {
         String mobile = vo.getMobile();
         String password = vo.getPassword();
-//        if(StringUtils.isEmpty(mobile) || StringUtils.isEmpty(password)){
-//            return RespBean.error(RespBeanEnum.LOGIN_ERROR);
-//        }
-//
-//        if(!ValidatorUtil.isMobile(mobile)){
-//            return RespBean.error(RespBeanEnum.MOBILE_ERROR);
-//        }
 
-        User user = userMapper.selectById(mobile);
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.eq("mobile", mobile);
+        User user = userMapper.selectOne(userQueryWrapper);
         if(Objects.isNull(user)){
             throw new GlobalException(RespBeanEnum.LOGIN_ERROR);
         }

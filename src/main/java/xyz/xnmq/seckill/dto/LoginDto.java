@@ -10,7 +10,7 @@ import xyz.xnmq.seckill.annotation.IsMobile;
 import javax.validation.constraints.NotNull;
 
 /**
- * @author zhoulong
+ * @author xnmq
  * @Date 2021/7/13
  * @Description 登录VO
  */

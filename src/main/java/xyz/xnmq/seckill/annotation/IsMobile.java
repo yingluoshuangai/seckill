@@ -14,7 +14,7 @@ import static java.lang.annotation.ElementType.TYPE_USE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * @author zhoulong
+ * @author xnmq
  * @Date 2021/7/20
  * @Description
  * 判断是否是手机号
